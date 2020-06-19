@@ -1,0 +1,77 @@
+,abbr,states
+0,AA,Armed Forces (the) Americas
+1,AB,Alberta
+2,AE,Armed Forces Europe
+3,AK,Alaska
+4,AL,Alabama
+5,AP,Armed Forces Pacific
+6,AR,Arkansas
+7,AS,American Samoa
+8,AZ,Arizona
+9,BC,British Columbia
+10,CA,California
+11,CD,Canada
+12,CO,Colorado
+13,CT,Connecticut
+14,DC,Dist. Of Columbia
+15,DE,Delaware
+16,FF,Foreign Countries
+17,FL,Florida
+18,GA,Georgia
+19,GU,Guam
+20,HI,Hawaii
+21,IA,Iowa
+22,ID,Idaho
+23,IL,Illinois
+24,IN,Indiana
+25,KS,Kansas
+26,KY,Kentucky
+27,LA,Louisiana
+28,MA,Massachusetts
+29,MB,Manitoba
+30,MD,Maryland
+31,ME,Maine
+32,MI,Michigan
+33,MN,Minnesota
+34,MO,Missouri
+35,MS,Mississippi
+36,MT,Montana
+37,MX,Mexico
+38,NB,New Brunswick
+39,NC,North Carolina
+40,ND,North Dakota
+41,NE,Nebraska
+42,NH,New Hampshire
+43,NJ,New Jersey
+44,NL,Newfoundland and Labrador
+45,NM,New Mexico
+46,NS,Nova Scotia
+47,NT,Northwest Territories
+48,NU,Nunavut
+49,NV,Nevada
+50,NY,New York
+51,OH,Ohio
+52,OK,Oklahoma
+53,ON,Ontario
+54,OR,Oregon
+55,PA,Pennsylvania
+56,PE,Prince Edward Island
+57,PR,Puerto Rico
+58,QC,Quebec
+59,RI,Rhode Island
+60,SC,South Carolina
+61,SD,South Dakota
+62,SK,Saskatchewan
+63,TN,Tennessee
+64,TT,Trust Territory
+65,TX,Texas
+66,UN,Unknown
+67,UT,Utah
+68,VA,Virginia
+69,VI,Virgin Islands
+70,VT,Vermont
+71,WA,Washington
+72,WI,Wisconsin
+73,WV,West Virginia
+74,WY,Wyoming
+75,YT,Yukon

@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+	<head>
+        <title>My first three.js app</title>
+        <style>
+            #sphere {
+                background-image:url(https://www.rawlings.com/on/demandware.static/-/Sites-rawlings-catalog/default/dw4898c827/images/megamenu/20200301-memorabilia-balls-400-200.jpg);
+                width: 2000px;
+                height: 500px;
+            }
+        </style>
+		<style>
+			body { margin: 0; }
+			canvas { display: block; }
+		</style>
+    </head>
+    <div id="sphere"></div>
+	<body>
+        <script src="three.js"></script>
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+		<script>
+            var WIDTH = 700;
+            var HEIGHT = 500;
+
+            //var $sphere = $('#sphere');
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 45, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer({antialias: true});
+			renderer.setSize( window.innerWidth, window.innerHeight );
+            document.body.appendChild( renderer.domElement );
+
+            //var sphere = new THREE.Mesh(
+            //    new THREE.SphereGeometry(100, 32, 32),
+            //    new THREE.MeshBasicMaterial({
+            //        map: THREE.ImageUtils.loadTexture(https://en.wikipedia.org/wiki/File:Baseball.jpg)
+            //    })
+            //);
+
+            //sphere.scale.x = -1;
+
+            //$sphere.append( renderer.domElement );
+            
+            //let controls = new THREE.OrbitControls(camera);
+            //controls.addEventListener('change',renderer);
+
+            //let materialArray = [];
+            //let texture_ft = new THREE.TextureLoad().load('https://en.wikipedia.org/wiki/File:Baseball.jpg');
+            //materialArray.push(new THREE.MeshBasicMaterial({map: texture_ft}));
+
+            //let skyboxGeo = new THREE.BoxGeometry(10000,10000,10000);
+            //let skybox = new THREE.Mesh( geometry, material );
+            //scene.add(skybox);
+
+            //textureloader = new THREE.TextureLoader();
+            //textureloader.load('https://en.wikipedia.org/wiki/File:Baseball.jpg', function(tx) {
+            //    material = new THREE.MeshBasicMaterial({map: tx,
+            //    wireframe: false,
+            //    color: 'rgb(200,200,50)'
+            //  })  });
+
+            textureloader = new THREE.TextureLoader();
+            texture = textureloader.load('https://en.wikipedia.org/wiki/File:Baseball.jpg')
+            //function (texture) {
+            //    var sphere = new THREE.SphereGeometry(RADIUS, SEGMENTS, RINGS);
+            //})
+            //textureloader.load('https://en.wikipedia.org/wiki/File:Baseball.jpg', function(tx) {
+            //    material = new THREE.MeshBasicMaterial({map: tx,
+            //    wireframe: false,
+            //    color: 'rgb(200,200,50)'
+            //  })  });
+
+            //var geometry = new THREE.SphereGeometry(1000, 80, 80);
+            //var geometry = new THREE.SphereGeometry(200, 200, 200);
+            var geometry = new THREE.SphereGeometry(1, 32, 32);
+            //geometry.dynamic = true;
+
+            //var light =  new THREE.AmbientLight(0xffffff, 0.5);
+            //scene.add(light);
+
+            //var light2 =  new THREE.AmbientLight(0xffffff, 0.5);
+            //scene.add(light2);
+            ////var material = new THREE.MeshPhongMaterial( { color: 0x555555, specular: 0xffffff, shininess: 50 } );
+            //var material = new THREE.MeshPhongMaterial( { color: 0xF3FFE2 } );
+            //var material = new THREE.MeshPhongMaterial( { color: 'hs1(0,100%,50%)' } );
+            
+            // Green Sphere
+			//var material = new THREE.MeshBasicMaterial( { color: 0x00ff00 } );
+            //var material = new THREE.MeshPhongMaterial( { ambient: 0x555555, color 0x555555, specular: 0xffffff, shininess: 50, shading: THREE.SmoothShading  } );
+            
+            // Red Sphere
+            //var material = new THREE.MeshBasicMaterial( { color: 'red' } );
+            //var material = new THREE.MeshBasicMaterial( { color: '#F00' } );
+            //var material = new THREE.MeshBasicMaterial( { color: 'rbg(255,0,0)' } );
+            var material = new THREE.MeshBasicMaterial( { color: 'rgb(200,200,50)' } );
+            //var material = new THREE.MeshBasicMaterial( { 
+            //    color: 'rgb(200,200,50)',
+            //    map: texture
+            //} );
+            
+            
+            ////var meshMaterial = new THREE.MeshPhongMaterial({color: 0x7777ff});
+            //var material = new THREE.MeshPhongMaterial( { color: 0xF3FFE2 } );
+            
+            var img = THREE.ImageUtils.loadTexture("https://en.wikipedia.org/wiki/File:Baseball.jpg");
+            var mesh = new THREE.MeshBasicMaterial({ map: img});
+            //globe.add(mesh);
+            //globe.position.z = -300;
+
+            // White Sphere
+            ////var material = new THREE.MeshBasicMaterial( { 
+                ////color: 'hs1(0,50%,75%)'
+                //map: THREE.ImageUtils.loadTexture("https://en.wikipedia.org/wiki/File:Baseball.jpg")
+            ////} );
+			//var material = new THREE.MeshLambertMaterial( { color: 'red' } );
+            
+            //material.map = THREE.ImageUtils.loadTexture('images/galaxy_starfield.png')
+            ////material.map = THREE.ImageUtils.loadTexture('images/earthmap1k.jpg')
+            //material.bumpMap = THREE.ImageUtils.loadTexture('images/earthbump1k.jpg')
+            //material.bumpScale = 0.05
+            //material.specularMap = THREE.ImageUtils.loadTexture('images/earthspec1k.jpg')
+            //material.specular = new THREE.Color('grey')
+            //onRenderFcts.push(function(delta, now) {
+            //    earthMesh.rotation.y += 1/32 * delta
+            //})
+
+            //var groups = vis.selectAll("g")
+            //.data(nodes).enter()
+            //.append("g")
+            //.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; })
+            //.call(force.drag);
+
+            //groups.append("path")
+            //.attr("d", d3.svg.symbol()
+            //.size(function(d) { return d.size; })
+            //.type(function(d) { return d.type; }))
+            //.style("fill", "steelblue")
+            //.style("stroke", "black")
+            //.style("stroke-width", "1.5px");
+
+            //groups.append("image")
+            //.attr("xlink:href", "https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTMsZ2J04NHsl2tm8uXp5WHjx0B2Aq9wJFdnSS8Ft7-XJFvXxCB&usqp=CAU")
+            //.attr("x", -8)
+            //.attr("y", -8)
+            //.attr("width", 16)
+            //.attr("height", 16)
+            //.style("stroke", "black")
+            //.style("stroke-width", "1px");
+
+            // position the sphere
+            //sphere.position.x = 0;
+            //sphere.position.y = 3;
+            //sphere.position.z = 2;
+
+            var cube = new THREE.Mesh( geometry, material );
+            cube.scale.x = -1;
+
+            const pointLight = new THREE.PointLight(0xFFFFFF);
+
+            //new THREE.SphereGeometry(radius, segments, rings), sphereMaterial);
+            //var cube = new THREE.Mesh( geometry, mesh );
+			scene.add( cube );
+
+			camera.position.z = 5;
+
+			var animate = function () {
+                requestAnimationFrame( animate );
+                
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render( scene, camera );
+			};
+            
+			animate();
+		</script>
+	</body>
+</html>
